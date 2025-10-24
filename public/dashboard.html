@@ -18,11 +18,44 @@
       padding: 1rem 2rem;
       font-size: 1.5rem;
       font-weight: 700;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap; /* Allow wrapping on small screens */
+      gap: 1rem;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
     }
 
     .header-bar a {
       color: #fff;
       text-decoration: none;
+    }
+
+    .welcome-message {
+      font-size: 1.1rem;
+      font-weight: 400;
+    }
+
+    .logout-btn {
+      background-color: #FF9800;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .logout-btn:hover {
+      background-color: #f57c00;
     }
 
     .dashboard-container {
@@ -184,7 +217,11 @@
 <body>
 
   <header class="header-bar">
-    <a href="index.html">← Back to VocalForLocal</a>
+    <div class="header-left">
+      <a href="index.html">← Back to VocalForLocal</a>
+      <span id="welcome-message" class="welcome-message"></span>
+    </div>
+    <button id="logout-button" class="logout-btn">Log Out</button>
   </header>
 
   <main class="dashboard-container">
@@ -290,6 +327,56 @@
     </div>
     <p>&copy; 2025 VocalForLocal | All Rights Reserved</p>
   </footer>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+
+  <script>
+    // --- Your Firebase Configuration ---
+    // IMPORTANT: Replace the following with your app's Firebase project configuration
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_AUTH_DOMAIN",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_STORAGE_BUCKET",
+      messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+      appId: "YOUR_APP_ID"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+
+    // --- Log Out Functionality ---
+    const logoutButton = document.getElementById('logout-button');
+
+    logoutButton.addEventListener('click', () => {
+      auth.signOut().then(() => {
+        // Sign-out successful.
+        window.location.href = 'login.html'; // Redirect to login page
+      }).catch((error) => {
+        // An error happened.
+        console.error("Error signing out: ", error);
+        alert("Error logging out. Please try again.");
+      });
+    });
+
+    // Optional: Check if user is logged in on page load (for security)
+    // If not logged in, redirect to login page.
+    auth.onAuthStateChanged((user) => {
+      if (!user) {
+        // User is signed out, redirect to login.
+        window.location.href = 'login.html';
+      } else {
+        // User is signed in, display their name.
+        const welcomeMessage = document.getElementById('welcome-message');
+        if (user.displayName) {
+          welcomeMessage.textContent = `Welcome, ${user.displayName}!`;
+        }
+      }
+    });
+  </script>
 
 </body>
 </html>
