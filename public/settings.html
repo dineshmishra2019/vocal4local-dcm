@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Settings - VocalForLocal</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #f0f2f5;
+      color: #333;
+    }
+
+    .header-bar {
+      background: linear-gradient(90deg, #4CAF50, #8BC34A);
+      color: #fff;
+      padding: 1rem 2rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .header-bar a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .settings-container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .settings-container h1 {
+      color: #4CAF50;
+      margin-bottom: 2rem;
+    }
+
+    .settings-card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      padding: 1.5rem 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .settings-card h2 {
+      margin-top: 0;
+      color: #4CAF50;
+      font-size: 1.25rem;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="password"],
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .notification-group {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid #f0f2f5;
+    }
+
+    .notification-group:last-child {
+      border-bottom: none;
+    }
+
+    .notification-group label {
+      font-weight: normal;
+    }
+
+    /* Simple checkbox for demo */
+    .notification-group input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      accent-color: #4CAF50;
+    }
+
+    .btn-container {
+      text-align: right;
+    }
+
+    .btn {
+      background-color: #FF9800;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #f57c00;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header class="header-bar">
+    <a href="index.html">← Back to VocalForLocal</a>
+  </header>
+
+  <main class="settings-container">
+    <h1>Settings</h1>
+
+    <!-- Profile Settings Card -->
+    <section class="settings-card">
+      <h2>Profile Information</h2>
+      <div class="form-group">
+        <label for="business-name">Business Name</label>
+        <input type="text" id="business-name" value="Artisan Breads by Chloe">
+      </div>
+      <div class="form-group">
+        <label for="business-tagline">Tagline</label>
+        <input type="text" id="business-tagline" value="Handcrafted Sourdough & Pastries">
+      </div>
+      <div class="form-group">
+        <label for="owner-bio">Owner's Bio</label>
+        <textarea id="owner-bio">Hi, I'm Chloe! After a decade in corporate finance, I followed my passion for baking. I use locally-milled flour to create the freshest sourdough in town. Welcome to my shop!</textarea>
+      </div>
+    </section>
+
+    <!-- Notification Settings Card -->
+    <section class="settings-card">
+      <h2>Notification Preferences</h2>
+      <div class="notification-group">
+        <label for="notif-sale">New Sale</label>
+        <input type="checkbox" id="notif-sale" checked>
+      </div>
+      <div class="notification-group">
+        <label for="notif-recommendation">New Recommendation</label>
+        <input type="checkbox" id="notif-recommendation" checked>
+      </div>
+      <div class="notification-group">
+        <label for="notif-follower">New Follower</label>
+        <input type="checkbox" id="notif-follower">
+      </div>
+      <div class="notification-group">
+        <label for="notif-townhall">Town Hall Mention</label>
+        <input type="checkbox" id="notif-townhall" checked>
+      </div>
+    </section>
+
+    <!-- Account Settings Card -->
+    <section class="settings-card">
+      <h2>Account</h2>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" value="chloe@artisanbreads.com">
+      </div>
+      <div class="form-group">
+        <label for="password">Change Password</label>
+        <input type="password" id="password" placeholder="Enter new password">
+      </div>
+    </section>
+
+    <div class="btn-container">
+      <button class="btn">Save Changes</button>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="about.html">About Us</a>
+      <a href="help.html">Help & Support</a>
+      <a href="#">Terms of Service</a>
+    </div>
+    <p>&copy; 2025 VocalForLocal | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>

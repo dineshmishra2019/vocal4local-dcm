@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Town Hall - VocalForLocal B2B Network</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #f0f2f5;
+      color: #333;
+    }
+
+    .header-bar {
+      background: linear-gradient(90deg, #4CAF50, #8BC34A);
+      color: #fff;
+      padding: 1rem 2rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .header-bar a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .townhall-container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .create-post-box, .post-card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .create-post-box h2 {
+      margin-top: 0;
+      font-size: 1.5rem;
+      color: #4CAF50;
+    }
+
+    .create-post-box textarea {
+      width: 100%;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 0.75rem;
+      font-family: inherit;
+      font-size: 1rem;
+      resize: vertical;
+      min-height: 60px;
+    }
+
+    .btn {
+      background-color: #FF9800;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+      border: none;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+
+    .btn:hover { background-color: #f57c00; }
+
+    .post-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .post-header img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 1rem;
+    }
+
+    .post-author-info strong {
+      display: block;
+      font-size: 1.1rem;
+    }
+
+    .post-author-info span {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .verified-badge {
+      background-color: #4CAF50;
+      color: white;
+      font-size: 0.7rem;
+      padding: 3px 7px;
+      border-radius: 12px;
+      margin-left: 8px;
+      font-weight: 600;
+      display: inline-block;
+    }
+
+    .post-body p {
+      line-height: 1.6;
+    }
+
+    .post-tags {
+      margin-top: 1rem;
+    }
+
+    .post-tags .tag {
+      display: inline-block;
+      background-color: #e0e0e0;
+      color: #555;
+      padding: 4px 10px;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      margin-right: 0.5rem;
+    }
+
+    .post-tags .tag.priority {
+      background-color: #FF9800;
+      color: white;
+      font-weight: bold;
+    }
+
+    .post-actions {
+      border-top: 1px solid #f0f2f5;
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      display: flex;
+      gap: 1.5rem;
+      justify-content: space-around;
+    }
+
+    .post-actions a {
+      color: #555;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .post-actions a:hover {
+      color: #FF9800;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header class="header-bar">
+    <a href="index.html">← Back to VocalForLocal</a>
+  </header>
+
+  <div class="townhall-container">
+    <div class="create-post-box">
+      <h2>The Town Hall</h2>
+      <textarea placeholder="Share an update, ask for advice, or find a partner..."></textarea>
+      <button class="btn">Post</button>
+    </div>
+
+    <!-- Post 1: Partnership Request -->
+    <div class="post-card">
+      <div class="post-header">
+        <img src="https://images.unsplash.com/photo-1542628635-635627395906?auto=format&fit=crop&w=50&q=80" alt="Chloe">
+        <div class="post-author-info">
+          <strong>Artisan Breads by Chloe <span class="verified-badge">LBO</span></strong>
+          <span>Bakery Owner</span>
+        </div>
+      </div>
+      <div class="post-body">
+        <p>We're looking to partner with a local coffee shop to supply fresh pastries daily. We bake everything from scratch and can offer wholesale pricing. Looking for a partner who values quality and community. Please message me if interested!</p>
+        <div class="post-tags">
+          <span class="tag">#Partnership</span>
+          <span class="tag">#Wholesale</span>
+        </div>
+      </div>
+      <div class="post-actions">
+        <a href="#">Comment</a>
+        <a href="#">Recommend</a>
+        <a href="#">Message</a>
+      </div>
+    </div>
+
+    <!-- Post 2: Supply Chain Need (High Priority) -->
+    <div class="post-card">
+      <div class="post-header">
+        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=50&q=80" alt="Daily Grind">
+        <div class="post-author-info">
+          <strong>The Daily Grind Coffee <span class="verified-badge">LBO</span></strong>
+          <span>Cafe Owner</span>
+        </div>
+      </div>
+      <div class="post-body">
+        <p>Our current produce supplier is closing down. We're in urgent need of a new, reliable local farm or supplier for fresh fruits and vegetables for our cafe menu. Must be able to deliver 3 times a week. This is a high-priority need!</p>
+        <div class="post-tags">
+          <span class="tag priority">High Priority</span>
+          <span class="tag">#SupplyChain</span>
+          <span class="tag">#Sourcing</span>
+        </div>
+      </div>
+      <div class="post-actions">
+        <a href="#">Comment</a>
+        <a href="#">Recommend</a>
+        <a href="#">Message</a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="about.html">About Us</a>
+      <a href="help.html">Help & Support</a>
+      <a href="#">Terms of Service</a>
+    </div>
+    <p>&copy; 2025 VocalForLocal | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>

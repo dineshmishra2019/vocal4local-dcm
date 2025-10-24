@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Direct Checkout - VocalForLocal</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #f0f2f5;
+      color: #333;
+    }
+
+    .header-bar {
+      background: linear-gradient(90deg, #4CAF50, #8BC34A);
+      color: #fff;
+      padding: 1rem 2rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .header-bar a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .checkout-container {
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .checkout-container h1 {
+      color: #4CAF50;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .checkout-card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      padding: 1.5rem 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .checkout-card h2 {
+      margin-top: 0;
+      color: #4CAF50;
+      font-size: 1.25rem;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .product-summary {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid #eee;
+    }
+
+    .product-summary img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-right: 1rem;
+    }
+
+    .product-details {
+      flex-grow: 1;
+    }
+
+    .product-details h3 {
+      margin: 0 0 0.25rem 0;
+      font-size: 1.1rem;
+    }
+
+    .product-details p {
+      margin: 0;
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    .product-price {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #FF9800;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="tel"],
+    .form-group input[type="number"],
+    .form-group select {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .form-row > div {
+      flex: 1;
+    }
+
+    .btn-place-order {
+      background-color: #FF9800;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      font-size: 1.1rem;
+    }
+
+    .btn-place-order:hover {
+      background-color: #f57c00;
+    }
+
+    @media (max-width: 600px) {
+      .form-row {
+        flex-direction: column;
+        gap: 0;
+      }
+    }
+
+    /* Footer styles */
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background-color: #222;
+      color: #fff;
+      margin-top: 2rem;
+    }
+    .footer-links {
+      margin-bottom: 1rem;
+    }
+    .footer-links a {
+      color: #ddd;
+      text-decoration: none;
+      margin: 0 1rem;
+      transition: color 0.3s ease;
+    }
+    .footer-links a:hover {
+      color: #FF9800;
+    }
+    footer p { margin: 0; }
+
+  </style>
+</head>
+<body>
+
+  <header class="header-bar">
+    <a href="index.html">← Back to VocalForLocal</a>
+  </header>
+
+  <main class="checkout-container">
+    <h1>Direct Checkout</h1>
+
+    <div class="checkout-card">
+      <h2>Your Order</h2>
+      <div class="product-summary">
+        <img src="https://images.unsplash.com/photo-1584371983193-35b39b05656b?auto=format&fit=crop&w=80&q=80" alt="Classic Sourdough">
+        <div class="product-details">
+          <h3>Classic Sourdough Loaf</h3>
+          <p>From Artisan Breads by Chloe</p>
+        </div>
+        <span class="product-price">$8.00</span>
+      </div>
+
+      <h2>Shipping Information</h2>
+      <div class="form-group">
+        <label for="full-name">Full Name</label>
+        <input type="text" id="full-name" placeholder="John Doe">
+      </div>
+      <div class="form-group">
+        <label for="address">Street Address</label>
+        <input type="text" id="address" placeholder="123 Main St">
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="city">City</label>
+          <input type="text" id="city" placeholder="Anytown">
+        </div>
+        <div class="form-group">
+          <label for="state">State</label>
+          <input type="text" id="state" placeholder="CA">
+        </div>
+        <div class="form-group">
+          <label for="zip">Zip Code</label>
+          <input type="text" id="zip" placeholder="90210">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" placeholder="(123) 456-7890">
+      </div>
+
+      <h2>Payment Details</h2>
+      <div class="form-group">
+        <label for="card-number">Card Number</label>
+        <input type="text" id="card-number" placeholder="XXXX XXXX XXXX XXXX">
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="expiry">Expiry Date</label>
+          <input type="text" id="expiry" placeholder="MM/YY">
+        </div>
+        <div class="form-group">
+          <label for="cvv">CVV</label>
+          <input type="text" id="cvv" placeholder="123">
+        </div>
+      </div>
+
+      <button class="btn-place-order">Place Order</button>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="about.html">About Us</a>
+      <a href="help.html">Help & Support</a>
+      <a href="#">Terms of Service</a>
+    </div>
+    <p>&copy; 2025 VocalForLocal | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>

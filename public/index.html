@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="common.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="VocalForLocal is a video-centric social commerce platform designed to empower local business owners by connecting them directly with their community and beyond." />
+  <title>VocalForLocal: Your Local Showcase and Sales Engine</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #f9f9fb;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(90deg, #4CAF50, #8BC34A);
+      color: #fff;
+      padding: 1.5rem 2rem;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+
+    nav {
+      background-color: #fff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 2rem;
+      flex-wrap: wrap; /* Allow wrapping on small screens */
+      gap: 1rem; /* Add gap for wrapped items */
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #4CAF50;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #FF9800;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn-nav {
+      background-color: #4CAF50;
+      color: white !important;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    .btn-nav:hover {
+      background-color: #45a049;
+      color: white !important;
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1556742111-a3297a0d56d6?auto=format&fit=crop&w=1950&q=80')
+        no-repeat center center/cover;
+      color: #fff;
+      text-align: center;
+      padding: 6rem 1rem;
+      position: relative;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .hero h2 {
+      position: relative;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      position: relative;
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn {
+      background-color: #FF9800;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+      position: relative;
+    }
+
+    .btn:hover {
+      background-color: #f57c00;
+    }
+
+    .features, .ecosystem, .monetization {
+      padding: 4rem 2rem;
+      text-align: center;
+      background-color: #fff;
+    }
+
+    .features h2, .ecosystem h2, .monetization h2 {
+      color: #4CAF50;
+      margin-bottom: 2rem;
+      font-size: 2.2rem;
+    }
+
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: #666;
+      margin-top: -1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      text-align: left;
+    }
+
+    .card h3 {
+      color: #4CAF50;
+      margin-top: 0;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .ecosystem-container {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2rem;
+      text-align: left;
+    }
+
+    .ecosystem-box {
+      flex: 1;
+      background-color: #f0f8f0;
+      padding: 2rem;
+      border-radius: 10px;
+      border-left: 5px solid #8BC34A;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .price-point {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #FF9800;
+      margin: 1rem 0;
+    }
+
+    .contact {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 3rem 2rem;
+    }
+
+    .contact h2 {
+      color: #fff;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact p {
+      font-size: 1.1rem;
+      margin: 1rem 0;
+    }
+
+    @media (max-width: 600px) {
+      .hero h2 {
+        font-size: 2.5rem;
+      }
+      .ecosystem-container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>VocalForLocal</h1>
+    <p>Your Local Showcase and Sales Engine</p>
+  </header>
+
+  <nav>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#features">Features</a>
+      <a href="#ecosystem">For Business</a>
+      <a href="#monetization">Pricing</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="login.html" class="btn-nav">Login / Sign Up</a>
+  </nav>
+
+  <section class="hero" id="home">
+    <h2>Connect, Showcase, and Sell Locally</h2>
+    <p>A video-centric social commerce platform designed to empower local business owners by connecting them directly with their community.</p>
+    <a href="#contact" class="btn">Join the Waitlist</a>
+  </section>
+
+  <section class="features" id="features">
+    <h2>Core Features</h2>
+    <div class="feature-grid">
+      <div class="card">
+        <h3>ShopStream Feed</h3>
+        <p>An infinite scroll of short-form videos showcasing products, demos, and business stories. Every video is shoppable with a "Buy Now" button.</p>
+      </div>
+      <div class="card">
+        <h3>Direct Checkout</h3>
+        <p>A seamless, in-app checkout system. Customers purchase directly from your video content without ever leaving the LocalLoop app.</p>
+      </div>
+      <div class="card">
+        <h3>Verified LBO Profiles</h3>
+        <p>Build trust with robust business profiles, including verification, bio, product catalogs, and your physical location on a map.</p>
+      </div>
+      <div class="card">
+        <h3>VocalForLocal Recommendations</h3>
+        <p>Gain credibility with professional endorsements from other verified business owners. Customers can also leave product reviews.</p>
+      </div>
+      <div class="card">
+        <h3>The Town Hall (B2B)</h3>
+        <p>A dedicated networking space to find local partners, discuss supply chain needs, and share industry tips with other business owners.</p>
+      </div>
+      <div class="card">
+        <h3>Local Discovery</h3>
+        <p>Users can filter the ShopStream to see content from businesses in their immediate area, encouraging true local shopping and discovery.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ecosystem" id="ecosystem">
+    <h2>The VocalForLocal Ecosystem</h2>
+    <div class="ecosystem-container">
+      <div class="ecosystem-box">
+        <h3>For the Business Owner</h3>
+        <p>Use video to tell your product's story, not just list it. Turn views into revenue with instant checkout, and track your success with a powerful analytics dashboard. Build authority through peer recommendations.</p>
+      </div>
+      <div class="ecosystem-box">
+        <h3>For the Customer</h3>
+        <p>Discover unique local gems you never knew existed. Shop with confidence, relying on both customer reviews and professional endorsements. Enjoy an entertaining, dynamic shopping experience.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="monetization" id="monetization">
+    <h2>Simple & Transparent Pricing</h2>
+    <p class="section-subtitle">Focus on your business. We only succeed when you do.</p>
+    <div class="pricing-grid">
+      <div class="card">
+        <h3>Transaction Fee</h3>
+        <p class="price-point">.01-.05%</p>
+        <p>A small fee on every successful sale made through Direct Checkout. If you don't make money, neither do we.</p>
+      </div>
+      <div class="card">
+        <h3>Premium LBO Account</h3>
+        <p class="price-point">Subscription</p>
+        <p>Unlock advanced analytics, get priority support, and run targeted LocalLoop Ads to boost your visibility in your area.</p>
+      </div>
+      <div class="card">
+        <h3>B2B Service Fees</h3>
+        <p class="price-point">À La Carte</p>
+        <p>Access premium features within The Town Hall, like posting high-priority partnership or supply chain requests.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Ready to Join the Local Movement?</h2>
+    <p>VocalForLocal is coming soon! Sign up to get early access and be the first to know when we launch.</p>
+    <a href="mailto:hello@vocalforlocal.app" class="btn">Request Early Access</a>
+  </section>
+
+  <footer>
+    <div class="footer-links">
+      <a href="about.html">About Us</a>
+      <a href="help.html">Help & Support</a>
+      <a href="#">Terms of Service</a>
+    </div>
+    <p>&copy; 2025 VocalForLocal | All Rights Reserved</p>
+  </footer>
+</body>
+</html>

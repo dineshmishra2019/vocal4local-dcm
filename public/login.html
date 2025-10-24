@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="common.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login / Sign Up - VocalForLocal</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #f0f2f5;
+      color: #333;
+    }
+
+    .header-bar {
+      background: linear-gradient(90deg, #4CAF50, #8BC34A);
+      color: #fff;
+      padding: 1rem 2rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .header-bar a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .login-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: calc(100vh - 150px); /* Adjust based on header/footer height */
+      padding: 2rem 1rem;
+    }
+
+    .login-card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 2rem 2.5rem;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .tab-switcher {
+      display: flex;
+      border-bottom: 1px solid #eee;
+      margin-bottom: 2rem;
+    }
+
+    .tab-switcher button {
+      flex: 1;
+      padding: 1rem;
+      border: none;
+      background: none;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #aaa;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      transition: all 0.3s ease;
+    }
+
+    .tab-switcher button.active {
+      color: #4CAF50;
+      border-bottom-color: #4CAF50;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+
+    .btn {
+      background-color: #FF9800;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      font-size: 1.1rem;
+    }
+
+    .btn:hover {
+      background-color: #f57c00;
+    }
+
+    .form-footer {
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+
+    .form-footer a {
+      color: #4CAF50;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    #signup-form {
+      display: none;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header class="header-bar">
+    <a href="index.html">VocalForLocal</a>
+  </header>
+
+  <main class="login-container">
+    <div class="login-card">
+      <div class="tab-switcher">
+        <button id="login-tab" class="active">Login</button>
+        <button id="signup-tab">Sign Up</button>
+      </div>
+
+      <!-- Login Form -->
+      <form id="login-form">
+        <div class="form-group">
+          <label for="login-email">Email Address</label>
+          <input type="email" id="login-email" required>
+        </div>
+        <div class="form-group">
+          <label for="login-password">Password</label>
+          <input type="password" id="login-password" required>
+        </div>
+        <button type="submit" class="btn">Login</button>
+        <div class="form-footer">
+          <a href="forgot-password.html">Forgot Password?</a>
+        </div>
+      </form>
+
+      <!-- Signup Form -->
+      <form id="signup-form">
+        <div class="form-group">
+          <label for="signup-business-name">Business Name</label>
+          <input type="text" id="signup-business-name" required>
+        </div>
+        <div class="form-group">
+          <label for="signup-email">Email Address</label>
+          <input type="email" id="signup-email" required>
+        </div>
+        <div class="form-group">
+          <label for="signup-password">Password</label>
+          <input type="password" id="signup-password" required>
+        </div>
+        <button type="submit" class="btn">Create Account</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="about.html">About Us</a>
+      <a href="help.html">Help & Support</a>
+      <a href="#">Terms of Service</a>
+    </div>
+    <p>&copy; 2025 VocalForLocal | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    const loginTab = document.getElementById('login-tab');
+    const signupTab = document.getElementById('signup-tab');
+    const loginForm = document.getElementById('login-form');
+    const signupForm = document.getElementById('signup-form');
+
+    loginTab.addEventListener('click', () => {
+      loginTab.classList.add('active');
+      signupTab.classList.remove('active');
+      loginForm.style.display = 'block';
+      signupForm.style.display = 'none';
+    });
+
+    signupTab.addEventListener('click', () => {
+      signupTab.classList.add('active');
+      loginTab.classList.remove('active');
+      signupForm.style.display = 'block';
+      loginForm.style.display = 'none';
+    });
+
+    // Prevent form submission and show a simulation message
+    loginForm.addEventListener('submit', (event) => {
+        event.preventDefault(); // Prevent page reload
+        alert('Login functionality is a simulation. In a real application, you would be logged in and redirected.');
+    });
+
+    signupForm.addEventListener('submit', (event) => {
+        event.preventDefault(); // Prevent page reload
+        alert('Sign up functionality is a simulation. In a real application, your account would be created and you would be logged in.');
+    });
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="common.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Help & Support - VocalForLocal</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #f0f2f5;
+      color: #333;
+    }
+
+    .header-bar {
+      background: linear-gradient(90deg, #4CAF50, #8BC34A);
+      color: #fff;
+      padding: 1rem 2rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .header-bar a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .help-container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .help-container h1 {
+      color: #4CAF50;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .help-card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      padding: 1.5rem 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .help-card h2 {
+      margin-top: 0;
+      color: #4CAF50;
+      font-size: 1.25rem;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #f0f2f5;
+      padding: 1rem 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-item summary {
+      font-weight: 600;
+      cursor: pointer;
+      list-style: none; /* Hide default marker */
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none; /* Hide default marker for Chrome/Safari */
+    }
+
+    .faq-item p {
+      margin-top: 1rem;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .btn {
+      background-color: #FF9800;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+      border: none;
+      cursor: pointer;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      background-color: #f57c00;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header-bar">
+    <a href="index.html">← Back to VocalForLocal</a>
+  </header>
+
+  <main class="help-container">
+    <h1>Help & Support</h1>
+
+    <!-- FAQ Card -->
+    <section class="help-card">
+      <h2>Frequently Asked Questions</h2>
+      <details class="faq-item">
+        <summary>How do I get my business verified?</summary>
+        <p>To become a Verified LBO, navigate to your profile settings and select the "Request Verification" option. You will be asked to submit your business registration documents. Our team will review them within 3-5 business days.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What is the transaction fee on sales?</summary>
+        <p>VocalForLocal charges a small transaction fee (between .01-.05%) on every successful sale made through the Direct Checkout feature. This fee helps us maintain the platform. If you don't make a sale, you don't pay anything.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How do VocalForLocal Recommendations work?</summary>
+        <p>Verified LBOs can give and receive professional endorsements to each other. This builds a network of trust. Customers can also leave reviews on products they've purchased. You can request a recommendation from a partner business directly from their profile page.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How do I track my order as a customer?</summary>
+        <p>You can view your order history and tracking information in your user profile under the "My Orders" tab. You will also receive email notifications when your order is shipped.</p>
+      </details>
+    </section>
+
+    <!-- Contact Form Card -->
+    <section class="help-card">
+      <h2>Contact Us</h2>
+      <p>Can't find the answer you're looking for? Fill out the form below and our support team will get back to you.</p>
+      <form>
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Your Email</label>
+          <input type="email" id="email" required>
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" required></textarea>
+        </div>
+        <button type="submit" class="btn">Submit Ticket</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="about.html">About Us</a>
+      <a href="help.html">Help & Support</a>
+      <a href="#">Terms of Service</a>
+    </div>
+    <p>&copy; 2025 VocalForLocal | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShopStream - VocalForLocal</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #222;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .header-bar {
+      background: #1a1a1a;
+      width: 100%;
+      text-align: center;
+      padding: 0.75rem 0;
+      font-size: 1.2rem;
+      font-weight: 700;
+      border-bottom: 1px solid #333;
+    }
+
+    .header-bar a {
+      color: #4CAF50;
+      text-decoration: none;
+    }
+
+    .phone-mockup {
+      width: 100%;
+      max-width: 420px;
+      height: 85vh;
+      background: #000;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .search-bar {
+      padding: 0.75rem 1rem;
+      background-color: #1a1a1a;
+      border-bottom: 1px solid #333;
+    }
+
+    .search-bar input {
+      width: 100%;
+      padding: 0.6rem 0.8rem;
+      border: 1px solid #555;
+      border-radius: 8px;
+      background-color: #333;
+      color: #fff;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+
+    .search-bar input::placeholder {
+      color: #bbb;
+    }
+
+    .feed-container {
+      flex-grow: 1;
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+      -webkit-overflow-scrolling: touch; /* for smooth scrolling on iOS */
+    }
+
+    /* Hide scrollbar */
+    .feed-container::-webkit-scrollbar { display: none; }
+    .feed-container { -ms-overflow-style: none; scrollbar-width: none; }
+
+    .video-post {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      scroll-snap-align: start;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .video-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1rem;
+      background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+    }
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .user-info img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      margin-right: 10px;
+    }
+
+    .user-info strong {
+      font-size: 1rem;
+    }
+
+    .description {
+      font-size: 0.9rem;
+      line-height: 1.3;
+    }
+
+    .description span {
+      color: #8BC34A;
+      font-weight: 600;
+    }
+
+    .buy-now-btn {
+      background-color: #FF9800;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      display: block;
+      text-align: center;
+      margin-top: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .buy-now-btn:hover {
+      background-color: #f57c00;
+    }
+
+    .side-actions {
+      position: absolute;
+      right: 10px;
+      bottom: 15%;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .action-icon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 0.8rem;
+      cursor: pointer;
+    }
+
+    .action-icon svg {
+      width: 32px;
+      height: 32px;
+      fill: #fff;
+    }
+
+    /* Footer styles */
+    .app-footer {
+      background: #1a1a1a;
+      width: 100%;
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 0.8rem;
+      border-top: 1px solid #333;
+    }
+    .app-footer .footer-links a {
+      color: #ddd;
+      text-decoration: none;
+      margin: 0 0.5rem;
+      transition: color 0.3s ease;
+    }
+    .app-footer .footer-links a:hover {
+      color: #FF9800;
+    }
+    .app-footer p {
+      margin: 0.5rem 0 0 0;
+      color: #888;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header class="header-bar">
+    <a href="index.html">← Back to VocalForLocal Home</a>
+  </header>
+
+  <div class="phone-mockup">
+    <div class="feed-container">
+
+      <!-- Video Post 1: Baker -->
+      <div class="video-post" style="background-image: url('https://images.unsplash.com/photo-1621263764928-535254c85a4a?auto=format&fit=crop&w=420&q=80');">
+        <div class="video-overlay">
+          <div class="user-info">
+            <img src="https://images.unsplash.com/photo-1542628635-635627395906?auto=format&fit=crop&w=40&q=80" alt="Chloe">
+            <strong class="lbo-name">Artisan Breads by Chloe</strong>
+          </div>
+          <p class="description">Fresh out of the oven! Our classic sourdough is ready for you. <span>#sourdough #localbakery #anytown</span></p>
+          <a href="#" class="buy-now-btn">Buy Now: Classic Sourdough - $8.00</a>
+        </div>
+        <div class="side-actions">
+          <div class="action-icon"><svg viewBox="0 0 24 24"><path d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z"></path></svg> 1.2k</div>
+          <div class="action-icon"><svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12C20,12.74 19.88,13.45 19.64,14.12L14.12,19.64C13.45,19.88 12.74,20 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12.5,7V12.5L17,14.92L16.25,16.15L11,13V7H12.5Z"></path></svg> 88</div>
+        </div>
+      </div>
+
+      <!-- Video Post 2: Pottery -->
+      <div class="video-post" style="background-image: url('https://images.unsplash.com/photo-1565193566173-7a0ee3dbe281?auto=format&fit=crop&w=420&q=80');">
+        <div class="video-overlay">
+          <div class="user-info">
+            <img src="https://images.unsplash.com/photo-1531891437562-4301cf35b7e4?auto=format&fit=crop&w=40&q=80" alt="Mark">
+            <strong class="lbo-name">Mark's Pottery Studio</strong>
+          </div>
+          <p class="description">Watch the magic happen. Each mug is thrown by hand with local clay. <span>#pottery #handmade #crafts</span></p>
+          <a href="#" class="buy-now-btn">Buy Now: Ceramic Mug - $25.00</a>
+        </div>
+        <div class="side-actions">
+          <div class="action-icon"><svg viewBox="0 0 24 24"><path d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z"></path></svg> 3.5k</div>
+          <div class="action-icon"><svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12C20,12.74 19.88,13.45 19.64,14.12L14.12,19.64C13.45,19.88 12.74,20 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12.5,7V12.5L17,14.92L16.25,16.15L11,13V7H12.5Z"></path></svg> 215</div>
+        </div>
+      </div>
+
+      <!-- Video Post 3: Coffee Shop -->
+      <div class="video-post" style="background-image: url('https://images.unsplash.com/photo-1511920183353-3c7c95a57423?auto=format&fit=crop&w=420&q=80');">
+        <div class="video-overlay">
+          <div class="user-info">
+            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=40&q=80" alt="Daily Grind">
+            <strong class="lbo-name">The Daily Grind Coffee</strong>
+          </div>
+          <p class="description">Perfecting our latte art. Come grab a cup and say hi! <span>#coffee #latteart #localcafe</span></p>
+          <a href="#" class="buy-now-btn">Order Ahead: Large Latte - $5.50</a>
+        </div>
+        <div class="side-actions">
+          <div class="action-icon"><svg viewBox="0 0 24 24"><path d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z"></path></svg> 890</div>
+          <div class="action-icon"><svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12C20,12.74 19.88,13.45 19.64,14.12L14.12,19.64C13.45,19.88 12.74,20 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12.5,7V12.5L17,14.92L16.25,16.15L11,13V7H12.5Z"></path></svg> 42</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="search-bar">
+      <input type="text" id="shopstream-search" placeholder="Search products or businesses...">
+    </div>
+  </div>
+
+  <footer class="app-footer">
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="help.html">Help</a>
+      <a href="terms.html">Terms</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+    <p>&copy; 2025 VocalForLocal</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('shopstream-search');
+      const videoPosts = document.querySelectorAll('.video-post');
+
+      searchInput.addEventListener('keyup', (event) => {
+        const searchTerm = event.target.value.toLowerCase();
+
+        videoPosts.forEach(post => {
+          const description = post.querySelector('.description').textContent.toLowerCase();
+          const lboName = post.querySelector('.lbo-name').textContent.toLowerCase(); // Use the new class for LBO name
+
+          if (description.includes(searchTerm) || lboName.includes(searchTerm)) {
+            post.style.display = 'flex'; // Show the post
+          } else {
+            post.style.display = 'none'; // Hide the post
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

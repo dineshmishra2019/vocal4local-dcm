@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Orders - VocalForLocal</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #f0f2f5;
+      color: #333;
+    }
+
+    .header-bar {
+      background: linear-gradient(90deg, #4CAF50, #8BC34A);
+      color: #fff;
+      padding: 1rem 2rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .header-bar a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .orders-container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .orders-container h1 {
+      color: #4CAF50;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .order-card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
+      overflow: hidden; /* To contain the border-radius */
+    }
+
+    .order-header {
+      background-color: #f9f9f9;
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+    
+    .order-header span {
+        font-weight: 600;
+        color: #333;
+    }
+
+    .order-body {
+      padding: 1.5rem;
+    }
+
+    .order-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .order-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .order-item img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-right: 1rem;
+    }
+
+    .order-item-details {
+      flex-grow: 1;
+    }
+
+    .order-item-details h3 {
+      margin: 0 0 0.25rem 0;
+      font-size: 1rem;
+    }
+
+    .order-item-details p {
+      margin: 0;
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    .order-footer {
+      padding: 1rem 1.5rem;
+      border-top: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .order-status {
+      font-weight: 600;
+      padding: 5px 10px;
+      border-radius: 15px;
+      font-size: 0.8rem;
+    }
+
+    .status-delivered {
+      background-color: #e8f5e9;
+      color: #4CAF50;
+    }
+
+    .status-shipped {
+      background-color: #e3f2fd;
+      color: #2196F3;
+    }
+
+    .btn {
+      background-color: #FF9800;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover { background-color: #f57c00; }
+
+    /* Footer styles */
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background-color: #222;
+      color: #fff;
+      margin-top: 2rem;
+    }
+    .footer-links {
+      margin-bottom: 1rem;
+    }
+    .footer-links a {
+      color: #ddd;
+      text-decoration: none;
+      margin: 0 1rem;
+      transition: color 0.3s ease;
+    }
+    .footer-links a:hover {
+      color: #FF9800;
+    }
+    footer p { margin: 0; }
+  </style>
+</head>
+<body>
+
+  <header class="header-bar">
+    <a href="index.html">VocalForLocal</a>
+  </header>
+
+  <main class="orders-container">
+    <h1>My Orders</h1>
+
+    <!-- Order 1 -->
+    <div class="order-card">
+      <div class="order-header">
+        <div>ORDER PLACED<br><span>October 20, 2023</span></div>
+        <div>TOTAL<br><span>$33.00</span></div>
+        <div>ORDER # <span>123-4567890-1234567</span></div>
+      </div>
+      <div class="order-body">
+        <div class="order-item">
+          <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe281?auto=format&fit=crop&w=60&q=80" alt="Ceramic Mug">
+          <div class="order-item-details">
+            <h3>Ceramic Mug</h3>
+            <p>Sold by: Mark's Pottery Studio</p>
+          </div>
+        </div>
+        <div class="order-item">
+          <img src="https://images.unsplash.com/photo-1584371983193-35b39b05656b?auto=format&fit=crop&w=60&q=80" alt="Sourdough Loaf">
+          <div class="order-item-details">
+            <h3>Classic Sourdough Loaf</h3>
+            <p>Sold by: Artisan Breads by Chloe</p>
+          </div>
+        </div>
+      </div>
+      <div class="order-footer">
+        <span class="order-status status-delivered">Delivered on Oct 24, 2023</span>
+        <a href="#" class="btn">View Details</a>
+      </div>
+    </div>
+
+    <!-- Order 2 -->
+    <div class="order-card">
+      <div class="order-header">
+        <div>ORDER PLACED<br><span>September 15, 2023</span></div>
+        <div>TOTAL<br><span>$5.50</span></div>
+        <div>ORDER # <span>123-9876543-2109876</span></div>
+      </div>
+      <div class="order-body">
+        <div class="order-item">
+          <img src="https://images.unsplash.com/photo-1511920183353-3c7c95a57423?auto=format&fit=crop&w=60&q=80" alt="Latte">
+          <div class="order-item-details">
+            <h3>Large Latte (Order Ahead)</h3>
+            <p>Sold by: The Daily Grind Coffee</p>
+          </div>
+        </div>
+      </div>
+      <div class="order-footer">
+        <span class="order-status status-shipped">Shipped</span>
+        <a href="#" class="btn">Track Package</a>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="help.html">Help & Support</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+    <p>&copy; 2025 VocalForLocal | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>
